@@ -9,7 +9,7 @@ SRC_URI = "git://git@github.com/MakopoR/aesd-assignments.git;protocol=ssh;branch
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
 #SRCREV = "f99b82a5d4cb2a22810104f89d4126f52f4dfaba"
-SRCREV = "a471f2ce5b4bcd85b4a4365404a1c6df57725fa9"
+SRCREV = "2b19f71098ae3358e96cf268df2a99145410a5ce"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
@@ -23,7 +23,7 @@ FILES:${PN} += "${bindir}/aesdsocket"
 
 # TODO: customize these as necessary for any libraries you need for your application
 # (and remove comment)
-TARGET_LDFLAGS += "-pthread -lrt"
+TARGET_LDFLAGS += "-pthread -lrt -lm"
 
 inherit update-rc.d
 
